@@ -3,6 +3,7 @@ package com.luv2code.springboot.cruddemo.rest;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,9 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.luv2code.springboot.cruddemo.entity.Employee;
 import com.luv2code.springboot.cruddemo.service.EmployeeService;
 
-
-@RequestMapping("/api") // base url //
+@CrossOrigin
 @RestController
+@RequestMapping("/api") // base url //
 public class EmployeeRestController {
 	
 	private EmployeeService employeeService;
