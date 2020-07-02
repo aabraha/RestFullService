@@ -35,10 +35,15 @@
 		</dependency>
 
 		<!-- Add Jackson for JSON converters -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.9.5</version>
+		</dependency> -->
+		<dependency>
+			  <groupId>com.fasterxml.jackson.core</groupId>
+			  <artifactId>jackson-databind</artifactId>
+			  <version>[2.9.10.5,)</version>
 		</dependency>
 
 		<!-- Servlet+JSP+JSTL -->
@@ -71,7 +76,7 @@
 
 	<build>
 
-		<finalName>crm-web-app-rest-client-demo</finalName>
+		<finalName>my-rest-client</finalName>
 
 		<plugins>
 
