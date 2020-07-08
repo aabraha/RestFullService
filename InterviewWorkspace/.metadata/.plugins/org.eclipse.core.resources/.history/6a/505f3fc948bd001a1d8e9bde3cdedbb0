@@ -1,0 +1,32 @@
+package com.policy.entity;
+
+import java.time.LocalDate;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Transient;
+
+@Entity
+public class Policy {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
+	
+	private int policyNumber;
+	private LocalDate birthDate;
+	private String firstName;
+	private String lastName;
+	private LocalDate startDate;
+	private LocalDate endDate;
+	// age = startDate - birthDate
+	@Transient	
+	private LocalDate age;
+	
+	@OneToMany(cascade= CascadeType.ALL)
+	private MaillingAddress maillingAddress;
+
+}

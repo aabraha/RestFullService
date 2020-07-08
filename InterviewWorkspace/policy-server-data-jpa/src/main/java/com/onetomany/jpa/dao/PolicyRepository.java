@@ -1,0 +1,28 @@
+package com.onetomany.jpa.dao;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.onetomany.jpa.entity.PolicyObj;
+
+public interface PolicyRepository extends JpaRepository<PolicyObj,Integer> {
+	
+	/*
+	 * @Query("from PolicyObj po where po.policyNumber=policynumber and po.birthDate=birthDate"
+	 * ) public List<PolicyObj> getResult(int policyNumber, LocalDate birthDate);
+	 */
+	
+	//List<PolicyObj> findPolicyObjDistinctByPolicyNumberAndBirthDate(int policyNumber, LocalDate birthDate);
+
+	List<PolicyObj> findByPolicyNumberAndBirthDate(int policyNumber, LocalDate birthDate);
+	 
+
+}
+
+/*
+ * @Query("SELECT new com.onetomany.jpa.dto.JoinResponse(c.name, p.productName) From Customer c Join c.products p"
+ * ) public List<JoinResponse> getJoinInfo();
+ */

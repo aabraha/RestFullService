@@ -1,0 +1,33 @@
+package com.policy.service;
+
+import java.util.List;
+
+import com.policy.entity.Policy;
+
+public class PolicyServiceImpl implements PolicyService {
+
+	@Override
+	public List<Policy> getPolicies() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Policy getPolicy(int theId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void savePolicy(Policy thePolicy) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void deletePolicy(int theId) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

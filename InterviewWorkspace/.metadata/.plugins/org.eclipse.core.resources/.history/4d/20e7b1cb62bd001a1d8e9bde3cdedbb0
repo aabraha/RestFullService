@@ -1,0 +1,16 @@
+package com.onetomany.jpa.dao;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.onetomany.jpa.dto.JoinResponse;
+import com.onetomany.jpa.entity.Policy;
+
+public interface CustomerRepository extends JpaRepository<Policy,Integer> {
+	
+	@Query("SELECT new com.onetomany.jpa.dto.JoinResponse(c.name, p.productName) From Customer c Join c.products p")
+	public List<JoinResponse> getJoinInfo();
+
+}

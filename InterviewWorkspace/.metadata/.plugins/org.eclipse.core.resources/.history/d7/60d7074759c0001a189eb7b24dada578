@@ -1,0 +1,21 @@
+package com.policy.client.model;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import com.onetomany.jpa.entity.MailingAddress;
+
+public class Policy {
+	
+	private int policyNumber;
+	private LocalDate birthDate;
+	private String firstName;
+	private String lastName;
+	private LocalDate startDate;
+	private LocalDate endDate;
+	
+	private LocalDate age;
+
+	private List<MailingAddress> mailingAddresses;
+
+}

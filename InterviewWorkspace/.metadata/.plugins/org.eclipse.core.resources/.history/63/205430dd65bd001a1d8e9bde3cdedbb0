@@ -1,0 +1,74 @@
+package com.onetomany.jpa.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.onetomany.jpa.dao.MailingAddressRepository;
+import com.onetomany.jpa.dao.PolicyRepository;
+import com.onetomany.jpa.dto.OrderRequest;
+import com.onetomany.jpa.entity.Policy;
+
+@CrossOrigin
+@RestController
+@RequestMapping("/api")
+public class PolicyRestController {
+	
+	@Autowired
+	private PolicyRepository policyRepository;
+	
+	@Autowired
+	private MailingAddressRepository mailingAddressRepository;
+	
+	@GetMapping("/policies")
+	public List<Policy> getPolicies(){
+		
+		System.out.println("Inside get all service");
+		
+		return policyRepository.findAll();
+	}
+	
+
+	// end point for GET "/policies/{policyId}"
+	
+	// end point for POST "/policies"
+	
+	// end point for PUT "/policies"
+	
+	//end point for DELETE "/policies/{policyId}"
+	
+ 
+
+}
+
+/* 
+ * 
+	@PostMapping("/policies")
+	public Policy placeOrder(@RequestBody OrderRequest orderRequest) {
+		
+		System.err.println("out put : " +  orderRequest);
+		return policyRepository.save(orderRequest.getCustomer());
+		
+	}
+	
+	@GetMapping("/orders")
+	public List<Policy> findAllOrders(){
+		
+		return policyRepository.findAll();
+	}
+	
+	// expose Join response "/orders/join
+	/*
+	 * @GetMapping("/joinresponse") public List<JoinResponse> getJoinInfo(){
+	 * 
+	 * 
+	 * return policyRepository.getJoinInfo(); }
+	 */
+ * 
+ */

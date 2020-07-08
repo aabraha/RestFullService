@@ -1,0 +1,12 @@
+package com.policy.client.model;
+
+public class MailingAddress {
+	
+	private String address_1;
+	private String address_2;
+	private String city;
+	private String state;
+	private int zipCode;
+	private String country;
+
+}

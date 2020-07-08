@@ -1,0 +1,15 @@
+
+#
+# JDBC properties
+#
+spring.datasource.url=jdbc:mysql://localhost:3306/customer_directory?useSSL=false&serverTimeZone=UTC
+spring.datasource.username=root
+spring.datasource.password=root
+
+# Server port to run
+server.port=4040
+
+# always drop and recreate the database schema on startup
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=update
+

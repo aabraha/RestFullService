@@ -1,0 +1,21 @@
+package com.policy.dao;
+
+import java.util.List;
+
+import com.policy.entity.Policy;
+
+public interface PolicyDAO {
+	
+	// get all
+	public List<Policy> getPolicies();
+	
+	//get a single
+	public Policy getPolicy();
+	
+	// save or update
+	public void savePolicy(Policy thePolicy);
+	
+	// delete a single
+	public void deletePolicy(int theId);
+
+}

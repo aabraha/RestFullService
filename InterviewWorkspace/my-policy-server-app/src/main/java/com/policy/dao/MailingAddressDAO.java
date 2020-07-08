@@ -1,0 +1,22 @@
+package com.policy.dao;
+
+import java.util.List;
+
+import com.policy.entity.MailingAddress;
+
+
+public interface MailingAddressDAO {
+	
+	// get all
+		public List<MailingAddress> getMailingAddress();
+		
+		//get a single
+		public MailingAddress getMailingAddress(int theId);
+		
+		// save or update
+		public void saveMailingAddress(MailingAddress theMailingAddress);
+		
+		// delete a single
+		public void deleteMailingAddress(int theId);	
+
+}

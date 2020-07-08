@@ -1,0 +1,5 @@
+package com.policy.client.config;
+
+public class AppConfig {
+
+}

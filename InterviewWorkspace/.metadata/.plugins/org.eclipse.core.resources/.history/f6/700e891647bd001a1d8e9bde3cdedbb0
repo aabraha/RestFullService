@@ -1,0 +1,10 @@
+package com.policy.entity;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Policy {
+	@Id
+	@GeneratedValue(strategy=GenerationType.)
+
+}

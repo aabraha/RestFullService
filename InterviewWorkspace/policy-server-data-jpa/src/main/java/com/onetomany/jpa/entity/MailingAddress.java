@@ -1,0 +1,30 @@
+package com.onetomany.jpa.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+
+@Entity
+public class MailingAddress {
+	
+	@Id
+	private int id;
+	
+	private String address_1;
+	private String address_2;
+	private String city;
+	private String state;
+	private int zipCode;
+	private String country;
+
+}

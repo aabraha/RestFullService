@@ -1,0 +1,45 @@
+package com.onetomany.jpa.entity;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Transient;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+
+@Entity
+public class Policy {
+	
+	@Id
+	@GeneratedValue
+	private int id;
+	
+	private int policyNumber;
+	private LocalDate birthDate;
+	private String firstName;
+	private String lastName;
+	private LocalDate startDate;
+	private LocalDate endDate;
+	// age = startDate - birthDate
+	@Transient	
+	private LocalDate age;
+	
+	@OneToMany(cascade= CascadeType.ALL)
+	@JoinColumn(name="policy-id")
+	private List<MailingAddress> maillingAddresses;
+
+}

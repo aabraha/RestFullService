@@ -1,0 +1,40 @@
+package com.policy.dao;
+
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.policy.entity.Policy;
+
+@Repository
+public class PolicyDAOImpl implements PolicyDAO {
+
+	@Autowired 
+	private SessionFactory sessionFactory;
+	
+	@Override
+	public List<Policy> getPolicies() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Policy getPolicy() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void savePolicy(Policy thePolicy) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void deletePolicy(int theId) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

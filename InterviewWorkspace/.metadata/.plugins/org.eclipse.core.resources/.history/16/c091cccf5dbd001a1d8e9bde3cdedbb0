@@ -1,0 +1,132 @@
+package com.policy.entity;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+public class PolicyName {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
+	
+	private int policyNumber;
+	private LocalDate birthDate;
+	private String firstName;
+	private String lastName;
+	private LocalDate startDate;
+	private LocalDate endDate;
+	// age = startDate - birthDate
+	@Transient	
+	private LocalDate age;
+	
+	@OneToMany(cascade= CascadeType.ALL)
+	@JoinColumn(name="policy-id")
+	private List<MaillingAddress> maillingAddresses;
+
+	public PolicyName() {
+		
+	}
+
+	public PolicyName(int policyNumber, LocalDate birthDate, String firstName, String lastName, LocalDate startDate,
+			LocalDate endDate, LocalDate age, List<MaillingAddress> maillingAddresses) {
+		this.policyNumber = policyNumber;
+		this.birthDate = birthDate;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.age = age;
+		this.maillingAddresses = maillingAddresses;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getPolicyNumber() {
+		return policyNumber;
+	}
+
+	public void setPolicyNumber(int policyNumber) {
+		this.policyNumber = policyNumber;
+	}
+
+	public LocalDate getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(LocalDate birthDate) {
+		this.birthDate = birthDate;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public LocalDate getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(LocalDate startDate) {
+		this.startDate = startDate;
+	}
+
+	public LocalDate getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(LocalDate endDate) {
+		this.endDate = endDate;
+	}
+
+	public LocalDate getAge() {
+		return age;
+	}
+
+	public void setAge(LocalDate age) {
+		this.age = age;
+	}
+
+	public List<MaillingAddress> getMaillingAddresses() {
+		return maillingAddresses;
+	}
+
+	public void setMaillingAddresses(List<MaillingAddress> maillingAddresses) {
+		this.maillingAddresses = maillingAddresses;
+	}
+
+	@Override
+	public String toString() {
+		return "Policy [id=" + id + ", policyNumber=" + policyNumber + ", birthDate=" + birthDate + ", firstName="
+				+ firstName + ", lastName=" + lastName + ", startDate=" + startDate + ", endDate=" + endDate + ", age="
+				+ age + ", maillingAddresses=" + maillingAddresses + "]";
+	}
+		
+
+}

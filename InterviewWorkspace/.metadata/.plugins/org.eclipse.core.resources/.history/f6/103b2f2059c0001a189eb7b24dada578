@@ -1,0 +1,5 @@
+package com.policy.client.model;
+
+public class MailingAddress {
+
+}

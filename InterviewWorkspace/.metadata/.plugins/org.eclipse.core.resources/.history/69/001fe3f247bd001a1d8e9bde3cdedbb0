@@ -1,0 +1,6 @@
+package com.policy.entity;
+
+@Entity
+public class MaillingAddress {
+
+}

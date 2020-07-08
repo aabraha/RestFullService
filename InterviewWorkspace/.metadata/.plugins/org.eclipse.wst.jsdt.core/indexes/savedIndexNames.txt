@@ -1,0 +1,6 @@
+INDEX VERSION 1.4+D:\Collection\InterviewWorkspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3419416137.index
+1039471619.index
+1017718698.index
+913123624.index
+3855292528.index

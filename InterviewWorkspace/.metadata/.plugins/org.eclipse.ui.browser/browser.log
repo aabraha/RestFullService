@@ -1,0 +1,9 @@
+
+Jul 03, 2020 12:26:41.12 NEW SESSION
+Jul 03, 2020 12:26:41.12 [24784:23216:0703/122641.119:ERROR:account_info_fetcher.cc(60)] OnGetTokenFailure: Invalid credentials (credentials rejected by client).
+Jul 03, 2020 18:56:50.72 [24784:17692:0703/185650.722:ERROR:socket_stream.cc(218)] Closing stream with result -2
+Jul 03, 2020 18:56:53.74 [24784:17692:0703/185653.745:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -105
+Jul 04, 2020 24:24:15.30 [24784:17692:0704/002415.304:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
+Jul 04, 2020 24:24:20.96 [24784:17692:0704/002420.969:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -105
+Jul 04, 2020 24:24:23.99 [24784:17692:0704/002423.993:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -105
+Jul 04, 2020 24:24:30.02 [24784:17692:0704/002430.026:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -105

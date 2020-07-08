@@ -1,0 +1,46 @@
+package com.policy.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.policy.dao.PolicyDAO;
+import com.policy.entity.Policy;
+
+@Service
+public class PolicyServiceImpl implements PolicyService {
+
+	@Autowired
+	private PolicyDAO policyDAO;
+	
+	@Override
+	@Transactional
+	public List<Policy> getPolicies() {
+		
+		return policyDAO.getPolicies();
+	}
+
+	@Override
+	@Transactional
+	public Policy getPolicy(int theId) {
+
+		return policyDAO.getPolicy(theId);
+	}
+
+	@Override
+	@Transactional
+	public void savePolicy(Policy thePolicy) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	@Transactional
+	public void deletePolicy(int theId) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

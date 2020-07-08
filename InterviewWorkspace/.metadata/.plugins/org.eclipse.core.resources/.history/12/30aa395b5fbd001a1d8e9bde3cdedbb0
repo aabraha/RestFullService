@@ -1,0 +1,62 @@
+package com.policy.dao;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.policy.entity.PolicyName;
+
+@Repository
+public class PolicyDAOImpl implements PolicyDAO {
+
+	@Autowired 
+	private SessionFactory sessionFactory;
+	
+	@Override
+	public List<PolicyName> getPolicies() {
+		
+		// create a session
+		Session currentSession = sessionFactory.getCurrentSession();
+		System.out.println("Inside get all PolicyDAOImpl");
+
+		
+		// create a Query
+		Query<PolicyName> theQuery = currentSession.createQuery("from PolicyName", PolicyName.class);
+
+		List<PolicyName> policies = theQuery.getResultList();
+		
+		return policies;
+	}
+
+	@Override
+	public PolicyName getPolicy(int theId) {
+		
+		Session currentSession = sessionFactory.getCurrentSession();
+				
+		return currentSession.get(PolicyName.class, theId);
+	}
+
+	@Override
+	public void savePolicy(PolicyName thePolicy) {
+
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		currentSession.saveOrUpdate(thePolicy);
+		
+	}
+
+	@Override
+	public void deletePolicy(int theId) {
+		
+		Session currentSession = sessionFactory.getCurrentSession();
+		Query theQuery = currentSession.createQuery("delete from PolicyName where id=:policyId");
+		theQuery.setParameter("policyId", theId);
+		
+		theQuery.executeUpdate();
+	}
+
+}
