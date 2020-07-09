@@ -1,0 +1,74 @@
+package com.onetomany.jpa.controller;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.convert.JodaTimeConverters.DateTimeToDateConverter;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.onetomany.jpa.dao.MailingAddressRepository;
+import com.onetomany.jpa.dao.PolicyRepository;
+import com.onetomany.jpa.dto.PolicyRequest;
+import com.onetomany.jpa.entity.MailingAddress;
+import com.onetomany.jpa.entity.PolicyObj;
+
+@CrossOrigin
+@RestController
+@RequestMapping("/api")
+public class PolicyRestController {
+	
+	@Autowired
+	private PolicyRepository policyRepository;
+	
+	@Autowired
+	private MailingAddressRepository mailingAddressRepository;
+	
+	@GetMapping("/policies")
+	public List<PolicyObj> getPolicies(){
+		
+		System.err.println("Inside get all service");
+		
+		return policyRepository.findAll();
+	}
+	
+	
+
+	// end point for GET "/policies/{policyId}/birthDate"
+	@GetMapping("/policies/{policyNumber}/birthDate")
+	public List<PolicyObj> getResult(@PathVariable int policyNumber, 
+									@RequestParam("birthDate") @DateTimeFormat(
+											iso = DateTimeFormat.ISO.DATE) LocalDate birthDate) {
+		
+		System.err.println("At Named Query: " + birthDate);
+		return policyRepository.findByPolicyNumberAndBirthDate(policyNumber, birthDate);
+	}
+	
+	
+	// end point for POST "/policies"
+	@PostMapping("/policies")
+	public PolicyObj savePolicy(@RequestBody PolicyRequest policyRequest) {
+		
+		System.err.println("out put : " +  policyRequest);
+		List<MailingAddress> mailingAddresses = policyRequest.getPolicyObj().getMailingAddresses();
+		System.err.println("mailing address: " + mailingAddresses);
+		//mailingAddressRepository.saveAll(mailingAddresses);
+		return policyRepository.save(policyRequest.getPolicyObj());
+		
+	}
+	
+	// end point for PUT "/policies"
+	
+	//end point for DELETE "/policies/{policyId}"
+	
+ 
+
+}

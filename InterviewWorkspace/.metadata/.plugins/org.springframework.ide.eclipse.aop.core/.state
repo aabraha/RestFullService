@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
-<aop-project name="spring-data-jpa-mapping"/>
+<aop-project name="policy-data-jpa-mapping"/>
+<aop-project name="policy-client-rest"/>
+<aop-project name="crm-web-app-rest-client-demo"/>
 <aop-project name="my-policy-server-app"/>
 </aop-reference-model>
