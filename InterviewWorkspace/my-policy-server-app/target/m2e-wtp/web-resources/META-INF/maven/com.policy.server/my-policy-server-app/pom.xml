@@ -10,7 +10,7 @@
  	<properties>
   dependabot/maven/InterviewWorkspace/my-policy-server-app/target/m2e-wtp/web-resources/META-INF/maven/com.policy.server/my-policy-server-app/org.springframework-spring-webmvc-5.2.21.RELEASE
 		<springframework.version>5.2.21.RELEASE</springframework.version>
-		<hibernate.version>5.4.1.Final</hibernate.version>
+		<hibernate.version>5.4.24.Final</hibernate.version>
 
 		<mysql.connector.version>[8.0.16,)</mysql.connector.version>
 		<c3po.version>[0.9.5.3,)</c3po.version>
